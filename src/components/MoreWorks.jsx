@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 // Importás fotos adicionales que tengas guardadas en tu carpeta images
-import img5 from '../assets/images/trabajo1.jpg'; // Podés reemplazar por trabajo5.jpg, etc.
-import img6 from '../assets/images/trabajo2.jpg';
-import img7 from '../assets/images/trabajo3.jpg';
-import img8 from '../assets/images/trabajo4.jpg';
+import img5 from '../assets/images/interior.jpg'; // Podés reemplazar por trabajo5.jpg, etc.
+import img6 from '../assets/images/techo.jpg';
+import img7 from '../assets/images/estructuraExterior.jpg';
+import img8 from '../assets/images/interiorNaranja.jpg';
 
 export default function MoreWorks() {
     const [selectedImage, setSelectedImage] = useState(null);
