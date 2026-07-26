@@ -11,10 +11,21 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 py-2.5 flex justify-between items-center">
 
                 {/* Logo / Marca */}
-                <div className="flex items-center gap-2 md:gap-3">
-                    <img src={logo} alt="Logo TuPintor" className="h-10 md:h-12 w-auto rounded-full shadow-inner" />
-                    <span className="text-xl md:text-2xl font-black text-brand-dark tracking-tighter">TuPintor</span>
-                </div>
+                <a
+                    href="#inicio"
+                    className="flex items-center gap-2 md:gap-3 group"
+                    aria-label="Ir al inicio"
+                >
+                    <img
+                        src={logo}
+                        alt="Logo TuPintor"
+                        className="h-10 md:h-12 w-auto rounded-full shadow-inner transition-transform duration-200 group-hover:scale-105"
+                    />
+
+                    <span className="text-xl md:text-2xl font-black text-brand-dark tracking-tighter transition-colors duration-200 group-hover:text-brand-blue">
+                        TuPintor
+                    </span>
+                </a>
 
                 {/* Links de navegación (Solo visibles en pantallas grandes lg:) */}
                 <nav className="hidden lg:flex items-center gap-6 xl:gap-8 font-bold text-gray-900 text-base xl:text-lg">
@@ -49,6 +60,8 @@ export default function Navbar() {
                     onClick={() => setIsOpen(!isOpen)}
                     className="lg:hidden text-gray-800 focus:outline-none p-2 text-2xl"
                     aria-label="Abrir menú"
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-menu"
                 >
                     <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
                 </button>
