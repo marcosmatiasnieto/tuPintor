@@ -6,6 +6,15 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),
+    tailwindcss({
+      theme: {
+        extend:{
+          colors:{
+            'brand-blue': '#8EACCD', //color pastel del logo
+            'brand-dark': '#1A1A1A',//negro suabe para texto
+          },
+        },
+      },
+    }),
   ],
 })
