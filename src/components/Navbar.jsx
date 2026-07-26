@@ -1,11 +1,20 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo-tupintor.png';
-import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
     const phone = "3804750587";
+
     const whatsappUrl = `https://wa.me/${phone}?text=Hola,%20quisiera%20pedir%20un%20presupuesto`;
+
+    const handleLogoClick = () => {
+        // Si ya estamos en la página principal, scrolleamos hacia arriba suavemente
+        if (location.pathname === '/') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     return (
         <header className="bg-white/95 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-gray-100">
@@ -14,6 +23,7 @@ export default function Navbar() {
                 {/* Logo / Marca */}
                 <Link
                     to="/"
+                    onClick={handleLogoClick}
                     className="flex items-center gap-2 md:gap-3 group"
                     aria-label="Ir al inicio"
                 >
@@ -56,7 +66,7 @@ export default function Navbar() {
                     </a>
                 </div>
 
-                {/* Botón Hamburguesa (Para pantallas chicas y medianas) */}
+                {/* Botón Hamburguesa */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="lg:hidden text-gray-800 focus:outline-none p-2 text-2xl"
