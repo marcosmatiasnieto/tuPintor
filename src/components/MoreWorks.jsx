@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import img5 from '../assets/images/interior.jpg';
 import img6 from '../assets/images/techo.jpg';
 import img7 from '../assets/images/estructuraExterior.jpg';
-import img8 from '../assets/images/interiorNaranja.jpg';
+import img8 from '../assets/images/FrenteDeCasa.jpg';
 
 export default function MoreWorks() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const fotosExtra = [
-        { src: img5, alt: "Proyecto de pintura exterior" },
-        { src: img6, alt: "Terminación en quincho y galería" },
-        { src: img7, alt: "Trabajo en interior y cielorrasos" },
-        { src: img8, alt: "Fachada comercial terminada" },
+        { src: img5, alt: "Proyecto de pintura interior" },
+        { src: img6, alt: "Terminación piso terraza" },
+        { src: img7, alt: "Trabajo en exterior" },
+        { src: img8, alt: "Frente de una casa" },
     ];
 
     return (
@@ -26,10 +26,10 @@ export default function MoreWorks() {
                         Galería de proyectos
                     </span>
                     <h2 className="text-2xl md:text-4xl font-bold text-brand-dark tracking-tight mb-2">
-                        Nuestros Trabajos Realizados
+                        Nuestra galeria de trabajos realizados
                     </h2>
                     <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base">
-                        Mirá los acabados y resultados reales en obras residenciales y comerciales.
+                    Explorá nuestro portafolio completo de proyectos y terminaciones.
                     </p>
                 </div>
 
