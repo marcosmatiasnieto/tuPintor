@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; //
+import { Link } from 'react-router-dom';
 
-// Importás fotos adicionales que tengas guardadas en tu carpeta images
 import img5 from '../assets/images/interior.jpg';
 import img6 from '../assets/images/techo.jpg';
 import img7 from '../assets/images/estructuraExterior.jpg';
@@ -18,23 +17,29 @@ export default function MoreWorks() {
     ];
 
     return (
-        <section className="py-20 bg-white px-4 border-t border-gray-100">
+        <section className="py-14 md:py-20 bg-white px-4 border-t border-gray-100">
             <div className="max-w-7xl mx-auto">
 
-                {/* Título de la sección */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-5xl font-black text-brand-dark tracking-tight">
-                        Algunos de nuestros trabajos
+                {/* Título de la sección armonizado */}
+                <div className="text-center mb-8 md:mb-10">
+                    <span className="text-brand-blue font-bold text-xs uppercase tracking-widest block mb-1.5">
+                        Galería de proyectos
+                    </span>
+                    <h2 className="text-2xl md:text-4xl font-bold text-brand-dark tracking-tight mb-2">
+                        Nuestros Trabajos Realizados
                     </h2>
+                    <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base">
+                        Mirá los acabados y resultados reales en obras residenciales y comerciales.
+                    </p>
                 </div>
 
-                {/* Grilla de imágenes */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Grilla de imágenes en 4 columnas de menor altura */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                     {fotosExtra.map((foto, index) => (
                         <div
                             key={index}
                             onClick={() => setSelectedImage(foto.src)}
-                            className="group relative overflow-hidden rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-80 md:h-[400px] bg-gray-100 border border-gray-100"
+                            className="group relative overflow-hidden rounded-2xl shadow-xs hover:shadow-lg transition-all duration-300 cursor-pointer h-56 md:h-64 bg-gray-100 border border-gray-100"
                         >
                             <img
                                 src={foto.src}
@@ -43,45 +48,45 @@ export default function MoreWorks() {
                             />
 
                             {/* Overlay al pasar el cursor */}
-                            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                                <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full font-bold text-sm border border-white/30 flex items-center gap-2">
-                                    <i className="fa-solid fa-magnifying-glass-plus"></i> Ampliar imagen
+                            <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-3">
+                                <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full font-semibold text-xs border border-white/30 flex items-center gap-1.5">
+                                    <i className="fa-solid fa-magnifying-glass-plus text-xs"></i> Ampliar
                                 </span>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* BOTÓN PARA IR A LA GALERÍA COMPLETA */}
-                <div className="text-center mt-12">
+                {/* Botón hacia la galería estilizado */}
+                <div className="text-center mt-8 md:mt-10">
                     <Link
                         to="/galeria"
-                        className="inline-flex items-center gap-3 bg-brand-dark hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-base md:text-lg"
+                        className="inline-flex items-center gap-2 bg-brand-dark hover:bg-slate-800 text-white font-semibold px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow text-xs sm:text-sm"
                     >
                         <span>Ver todas las fotos del portafolio</span>
-                        <i className="fa-solid fa-arrow-right text-brand-blue"></i>
+                        <i className="fa-solid fa-arrow-right text-brand-blue text-xs"></i>
                     </Link>
                 </div>
 
             </div>
 
-            {/* Lightbox / Modal */}
+            {/* Modal / Lightbox */}
             {selectedImage && (
                 <div
-                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+                    className="fixed inset-0 bg-black/85 z-50 flex items-center justify-center p-4 backdrop-blur-xs"
                     onClick={() => setSelectedImage(null)}
                 >
                     <div className="relative max-w-4xl max-h-[90vh]">
                         <button
                             onClick={() => setSelectedImage(null)}
-                            className="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-brand-blue transition cursor-pointer"
+                            className="absolute -top-10 right-0 text-white text-2xl font-bold hover:text-brand-blue transition cursor-pointer"
                         >
                             &times; Cerrar
                         </button>
                         <img
                             src={selectedImage}
                             alt="Trabajo ampliado"
-                            className="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain"
+                            className="max-w-full max-h-[80vh] rounded-xl shadow-2xl object-contain"
                         />
                     </div>
                 </div>

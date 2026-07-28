@@ -4,45 +4,59 @@ export default function Hero() {
     const phone = "3804750587";
     const whatsappUrl = `https://wa.me/${phone}?text=Hola,%20quisiera%20enviar%20fotos%20para%20un%20presupuesto`;
 
+    const serviciosClave = [
+        "Interior y Exterior",
+        "Sistema Airless",
+        "Renovación de Pisos",
+        "Impermeabilización",
+        "Mantenimiento Gral.",
+        "Barnices Sintéticos"
+    ];
+
     return (
         <section
-            className="relative pt-28 md:pt-36 pb-12 md:pb-20 px-4 bg-cover bg-center text-white min-h-[85vh] flex items-center"
+            className="relative pt-28 md:pt-36 pb-16 md:pb-24 px-4 bg-cover bg-center text-white min-h-[80vh] flex items-center justify-center"
             style={{ backgroundImage: `url(${fondoHero})` }}
         >
-            {/* Overlay */}
+            {/* Overlay más estilizado */}
             <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-[2px]"></div>
 
-            <div className="relative max-w-5xl mx-auto text-center z-10">
+            <div className="relative max-w-4xl mx-auto text-center z-10">
 
-                <span className="inline-block bg-brand-blue/30 text-blue-200 text-xs md:text-sm font-bold px-3.5 py-1 rounded-full border border-brand-blue/40 uppercase tracking-widest mb-4">
+                {/* Badge Superior */}
+                <span className="inline-block bg-brand-blue/20 text-blue-300 text-xs font-semibold px-3.5 py-1 rounded-full border border-brand-blue/30 uppercase tracking-wider mb-4">
                     Servicios Profesionales de Pintura
                 </span>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6 leading-tight tracking-tight">
+                {/* Título Principal Refinado (Menos agresivo) */}
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 md:mb-5 leading-tight tracking-tight text-white">
                     Pintores Profesionales en tu Ciudad
                 </h1>
 
-                <p className="text-base sm:text-xl text-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto font-normal leading-relaxed">
+                {/* Bajada/Subtítulo */}
+                <p className="text-sm sm:text-lg text-gray-200 mb-6 max-w-2xl mx-auto font-normal leading-relaxed">
                     Especialistas en interiores, exteriores, impermeabilizaciones y aplicación con tecnología Airless. Pedí tu presupuesto sin compromiso.
                 </p>
 
-                {/* Grilla de Servicios Clave */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto mb-8 text-xs sm:text-base md:text-lg font-bold text-white">
-                    <div className="bg-white/10 backdrop-blur-sm py-2 px-2.5 rounded-lg border border-white/10">✓ Interior y Exterior</div>
-                    <div className="bg-white/10 backdrop-blur-sm py-2 px-2.5 rounded-lg border border-white/10">✓ Sistema Airless</div>
-                    <div className="bg-white/10 backdrop-blur-sm py-2 px-2.5 rounded-lg border border-white/10">✓ Renovación de Pisos</div>
-                    <div className="bg-white/10 backdrop-blur-sm py-2 px-2.5 rounded-lg border border-white/10">✓ Impermeabilización</div>
-                    <div className="bg-white/10 backdrop-blur-sm py-2 px-2.5 rounded-lg border border-white/10">✓ Mantenimiento Gral.</div>
-                    <div className="bg-white/10 backdrop-blur-sm py-2 px-2.5 rounded-lg border border-white/10">✓ Barnices Sintéticos</div>
+                {/* Chips/Píldoras de Servicios (Sustituyen a las cajas pesadas) */}
+                <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-8">
+                    {serviciosClave.map((servicio, index) => (
+                        <span 
+                            key={index} 
+                            className="bg-white/10 backdrop-blur-md text-gray-100 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full border border-white/15 shadow-sm"
+                        >
+                            ✓ {servicio}
+                        </span>
+                    ))}
                 </div>
 
-                {/* Botones de Acción principales */}
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
+                {/* Botones de Acción Principales */}
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-3">
                     <a
                         href={`tel:+${phone}`}
-                        className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-sm sm:text-base md:text-lg"
+                        className="w-full sm:w-auto bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold px-5 py-3 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2.5 text-sm sm:text-base"
                     >
-                        <i className="fa-solid fa-phone text-lg"></i>
+                        <i className="fa-solid fa-phone text-base"></i>
                         Pedir cotización por teléfono
                     </a>
 
@@ -50,9 +64,9 @@ export default function Hero() {
                         href={whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto bg-white hover:bg-gray-100 text-slate-900 font-bold px-6 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3 text-sm sm:text-base md:text-lg"
+                        className="w-full sm:w-auto bg-white/95 hover:bg-white text-slate-900 font-semibold px-5 py-3 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-2.5 text-sm sm:text-base"
                     >
-                        <i className="fa-brands fa-whatsapp text-xl text-green-500"></i>
+                        <i className="fa-brands fa-whatsapp text-lg text-green-600"></i>
                         Enviar fotos por WhatsApp
                     </a>
                 </div>
