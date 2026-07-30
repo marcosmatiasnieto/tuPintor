@@ -63,6 +63,17 @@ export default function Navbar() {
                         <i className="fa-brands fa-whatsapp text-base"></i>
                         <span>Presupuesto</span>
                     </a>
+
+                    <a
+                        href="https://www.instagram.com/tupintor7/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Síguenos en Istagram"
+                        className="hidden sm:flex items-center justify-center w-9 h-9 bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white rounded-full shadow-sm hover:opacity-90 transition-all hover:scale-105"
+                    >
+                        <i className="fa-brands fa-instagram text-lg"></i>
+                    </a>
+
                 </div>
 
                 {/* Botón Hamburguesa */}
